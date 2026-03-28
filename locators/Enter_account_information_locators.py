@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 
-
 class EnterAccountInformationLocators:
 
     Title_Mr=(By.ID,"id_gender1")
