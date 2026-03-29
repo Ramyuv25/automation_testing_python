@@ -21,4 +21,4 @@ class EnterAccountInformationLocators:
     Zip=(By.ID,"zipcode")
     Mobile_number=(By.ID,"mobile_number")
 
-    Create_Account_button=(By.XPATH,"//button[text()='Create Account']")
+    Create_Account_button=(By.TAG_NAME,"button")
