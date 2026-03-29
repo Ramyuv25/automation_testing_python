@@ -8,4 +8,4 @@ def browser():
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options)
     yield driver
-    driver.quit()
+   # driver.quit()

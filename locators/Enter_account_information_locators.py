@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 
 class EnterAccountInformationLocators:
@@ -18,4 +20,5 @@ class EnterAccountInformationLocators:
     City=(By.ID,"city")
     Zip=(By.ID,"zipcode")
     Mobile_number=(By.ID,"mobile_number")
+
     Create_Account_button=(By.XPATH,"//button[text()='Create Account']")

@@ -10,7 +10,7 @@ def test_account_created(browser):
 
     for row in all_data:
 
-        page.signup(row['firstname'],row['email'])
+        page.signup(row['Name'],row['email'])
         page2.check_the_mr_radio_button()
         page2.enter_pasword(row['passoword'])
         page2.enter_firstname(row['firstname'])
