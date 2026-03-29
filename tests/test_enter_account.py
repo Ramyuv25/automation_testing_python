@@ -1,3 +1,5 @@
+from selenium.webdriver.common.action_chains import ActionChains
+
 from pages.New_user_signup_page import New_user_page
 from pages.Enter_Account_information_page import Enter_account_page
 from utils.excel_reader import Excel_reader
@@ -23,4 +25,7 @@ def test_account_created(browser):
         page2.enter_your_city(row['city'])
         page2.enter_your_mob_no(row['mobileno'])
         page2.enter_state(row['state'])
+
+        act=ActionChains(browser)
+        act.scroll_by_amount(0,500)
         page2.click_on_create_button()
