@@ -26,6 +26,6 @@ def test_account_created(browser):
         page2.enter_your_mob_no(row['mobileno'])
         page2.enter_state(row['state'])
 
-        act=ActionChains(browser)
-        act.scroll_by_amount(0,500)
+        # act=ActionChains(browser)
+        # act.scroll_by_amount(0,500)
         page2.click_on_create_button()

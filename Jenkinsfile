@@ -13,6 +13,7 @@ pipeline {
                 python -m venv %VENV%
                 call %VENV%\\Scripts\\activate
                 pip install -r requirements.txt
+                pip install allure-pytest
                 '''
             }
         }
@@ -21,7 +22,15 @@ pipeline {
             steps {
                 bat '''
                 call %VENV%\\Scripts\\activate
-                pytest tests/ -v --html=report.html --self-contained-html
+                pytest tests/ -v --alluredir=allure-results
+                '''
+            }
+        }
+
+        stage('Generate Allure Report') {
+            steps {
+                bat '''
+                allure generate allure-results -o allure-report --clean
                 '''
             }
         }
@@ -29,7 +38,8 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'report.html'
+            archiveArtifacts artifacts: 'allure-report/**'
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
     }
 }
